@@ -1,0 +1,3 @@
+[autorun]
+icon=bilder\tardis.ico 
+open=explorer.exe index.html

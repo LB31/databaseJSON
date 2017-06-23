@@ -1,0 +1,56 @@
+<html>
+    <head>
+            <title> Mighty Filler </title>
+
+            <script type="text/javascript">
+                function operation(){
+						
+                   
+						var n1 = document.getElementById("datum").value;
+						var n2 = document.getElementsByName("ordner");
+					
+                        var n3 = document.getElementById("bild").value;
+						var n4 = document.getElementById("kommentar").value;
+						
+						n3 = n3.replace(/.*[\/\\]/, '');
+						
+						
+						for (var i = 0, length = n2.length; i < length; i++) {
+						if (n2[i].checked) {
+       
+							n2 = n2[i].value;
+							alert(n2);
+							break;
+							}
+						}
+						
+						
+						
+                        /*location.href = "http://localhost:10001" + "?number1=" + n1 + "&number2=" + n2;
+						var wnd = window.open("http://localhost:10001" + "?number1=" + n1 + "&number2=" + n2 + "&text1=" + n3);*/
+						var wnd = window.open("http://localhost:10001" + "?datum=" + n1 + "&ordner=" + n2 + "&bild=" + n3 + "&kommentar=" + n4);
+						wnd.close();
+						
+                }
+            </script>
+
+    </head>
+
+    <body>
+            <h1>Daten bitte </h1>
+            <form id="form"> 
+                Datum: <input type="text" id="datum"></input> <br />
+				Bild: <input type="file" name="img" id="bild"> <br />
+				Kommentar: <br />
+				<textarea name="Text" cols="40" rows="5" id="kommentar"></textarea><br />
+				
+				Screenshots: <input type="radio" id="ordner" name="ordner" value="screenshots"><br />
+				Fotos: <input type="radio" id="ordner" name="ordner" value="fotos"> <br />
+				Videos: <input type="radio" id="ordner" name="ordner" value="videos"> <br />
+
+				
+                <input type="button" onClick="operation()" id="Los" value="Los"></input>
+            </form>
+
+
+<html>
